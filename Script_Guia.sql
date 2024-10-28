@@ -71,3 +71,62 @@ ADD CONSTRAINT respuesta_moderador FOREIGN KEY (moderator_identifier)
     REFERENCES moderator (identifier);
 
 
+-- Inserciones en la tabla user
+INSERT INTO user (identifier, name, lastname, sex, cellphone, email) 
+VALUES 
+(1, 'Luis', 'Ramos', 'M', '987654321', 'luis.ramos@gmail.com'),
+(2, 'Carla', 'Torres', 'F', '912345678', 'carla.torres@gmail.com'),
+(3, 'Pedro', 'Gómez', 'M', '934567890', 'pedro.gomez@gmail.com'),
+(4, 'Sofia', 'Mendoza', 'F', '945678123', 'sofia.mendoza@gmail.com'),
+(5, 'David', 'Ruiz', 'M', '956789012', 'david.ruiz@gmail.com');
+
+-- Inserciones en la tabla moderator
+INSERT INTO moderator (identifier, area, name, lastname, email, query_type, record) 
+VALUES 
+(1, 'W', 'Laura', 'García', 'laura.garcia@gmail.com', 'A', '2024-10-20 10:15:00'),
+(2, 'A', 'Mario', 'Díaz', 'mario.diaz@gmail.com', 'O', '2024-10-20 11:00:00'),
+(3, 'W', 'Lucía', 'Hernández', 'lucia.hernandez@gmail.com', 'A', '2024-10-20 12:30:00'),
+(4, 'A', 'Roberto', 'Sánchez', 'roberto.sanchez@gmail.com', 'O', '2024-10-20 13:45:00'),
+(5, 'W', 'Sandra', 'Morales', 'sandra.morales@gmail.com', 'A', '2024-10-20 14:50:00');
+
+-- Inserciones en la tabla answer
+INSERT INTO answer (identifier, moderator, record, moderator_identifier, date, query) 
+VALUES 
+(1, 'Laura García', '2024-10-20 11:30:00', 1, '2024-10-20 11:30:00', 'Respuesta sobre las metas del ODS 9'),
+(2, 'Mario Díaz', '2024-10-20 12:10:00', 2, '2024-10-20 12:10:00', 'Respuesta sobre avances tecnológicos ODS'),
+(3, 'Lucía Hernández', '2024-10-20 13:00:00', 3, '2024-10-20 13:00:00', 'Consulta sobre infraestructuras resilientes'),
+(4, 'Roberto Sánchez', '2024-10-20 14:00:00', 4, '2024-10-20 14:00:00', 'Consulta sobre aplicaciones web en ODS 9'),
+(5, 'Sandra Morales', '2024-10-20 15:00:00', 5, '2024-10-20 15:00:00', 'Respuesta sobre tecnologías innovadoras en ODS');
+
+-- Inserciones en la tabla consult
+INSERT INTO consult (identifier, user, query_content, date, record, users_identifier, response_identifier) 
+VALUES 
+(1, 'Luis Ramos', 'Consulta sobre innovación en ODS 9', '2024-10-20 10:30:00', '2024-10-20 11:00:00', 1, 1),
+(2, 'Carla Torres', 'Pregunta sobre sostenibilidad en infraestructuras', '2024-10-20 11:15:00', '2024-10-20 12:00:00', 2, 2),
+(3, 'Pedro Gómez', 'Consulta sobre objetivos de desarrollo sostenible', '2024-10-20 12:20:00', '2024-10-20 13:00:00', 3, 3),
+(4, 'Sofia Mendoza', 'Pregunta sobre metas del ODS 9', '2024-10-20 13:40:00', '2024-10-20 14:10:00', 4, 4),
+(5, 'David Ruiz', 'Consulta sobre innovación en aplicaciones tecnológicas', '2024-10-20 14:50:00', '2024-10-20 15:30:00', 5, 5);
+
+
+-- Listado de todos los usuarios
+SELECT * FROM user;
+SELECT * FROM consult;
+-- Listado de usuarios activos (eliminación lógica)
+SELECT * FROM moderator WHERE status = 1;
+SELECT * FROM consult WHERE status = 1;
+SELECT * FROM answer WHERE status = 1;
+SELECT * FROM user WHERE status = 1;
+
+
+
+-- Actualización de un usuario
+UPDATE user 
+SET email = 'luis.updated@gmail.com' 
+WHERE identifier = 1;
+
+-- Eliminación física de una consulta a usuario
+DELETE FROM consult WHERE users_identifier = 3;
+DELETE FROM user WHERE identifier = 3;
+
+-- Eliminación lógica del usuario con identifier = 3
+UPDATE user SET status = 0 WHERE identifier = 3;
