@@ -1,0 +1,7 @@
+REGISTRO Y GESTIÓN DE CONSULTAS
+Descripción de caso
+El Instituto Valle Grande en la actualidad cuenta con una gran cantidad de personas interesadas en conocer más sobre las carreras profesionales que ofrece: Análisis de Sistemas Empresariales y Gestión Agrícola. Por ello, realizan sus consultas a través de los diversos canales digitales (redes sociales, página web, entre otros.) y es un desafío poder atender todas a tiempo, esto dificulta la toma de decisión de los interesados en poder postular y estudiar en Valle Grande. Un dato importante a tener en cuenta es que por ahora hay una persona encargada de atender las consultas por cada carrera.
+
+En este sentido, es de vital importancia poder contar con un sistema que nos permita no solo atender las consultas de los interesados sino también con ello brindar un servicio de alta calidad que priorice la rapidez de las respuestas así como también la satisfacción del usuario. Si podemos mejorar la atención de consultas, podemos hacer un mejor control de seguimiento y con ello vamos a incrementar la cantidad de postulantes y estudiantes en Valle Grande, que es el objetivo al que apunta el área de marketing.
+
+Alcance
