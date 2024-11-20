@@ -13,7 +13,7 @@
 
 ## Alcance
 
-	+Registro de consultas: Los usuarios podrán registrar nuevas consultas de manera sencilla y recibir respuestas rápidas y personalizadas por parte del área de soporte a través de su correo electrónico.
+	* Registro de consultas: Los usuarios podrán registrar nuevas consultas de manera sencilla y recibir respuestas rápidas y personalizadas por parte del área de soporte a través de su correo electrónico.
 	+Asignación de consultas: El sistema clasificará y asignará automáticamente las consultas o reclamaciones al encargado correspondiente según la naturaleza del problema, garantizando una atención más rápida y efectiva.
 	+Búsqueda de consultas: Facilitar la búsqueda de consultas por diversos filtros como fecha, usuario, tipo de consulta, encargado asignado, entre otros, facilitando el acceso a la información.
 
