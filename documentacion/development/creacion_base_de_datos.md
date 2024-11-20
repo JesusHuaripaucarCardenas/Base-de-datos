@@ -62,18 +62,22 @@
 
 
 
-	`CREATE TABLE tabla1 (
-   	 	id INT AUTO_INCREMENT PRIMARY KEY,
-    	 	nombre VARCHAR(100),
-    	 	edad INT
-	 );`
+``` 
+CREATE TABLE tabla1 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    edad INT
+);
+```
+```
+CREATE TABLE tabla2 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    descripcion VARCHAR(255),
+    id_tabla1 INT,
+    FOREIGN KEY (id_tabla1) REFERENCES tabla1(id)
+);
+```
 
-	`CREATE TABLE tabla2 (
-    		id INT AUTO_INCREMENT PRIMARY KEY,
-    		descripcion VARCHAR(255),
-   		id_tabla1 INT,
-   		FOREIGN KEY (id_tabla1) REFERENCES tabla1(id)
-	);`
 
 
 ### Relaciones entre las tablas
@@ -85,14 +89,16 @@
 
 
 
-	`CREATE TABLE tabla3 (
-    		id INT AUTO_INCREMENT PRIMARY KEY,
-    		otra_columna VARCHAR(100),
-    		id_tabla1 INT,
-   	 	id_tabla2 INT,
-    		FOREIGN KEY (id_tabla1) REFERENCES tabla1(id),
-    		FOREIGN KEY (id_tabla2) REFERENCES tabla2(id)
-	);`
+```
+ CREATE TABLE tabla3 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    otra_columna VARCHAR(100),
+    id_tabla1 INT,
+    id_tabla2 INT,
+    FOREIGN KEY (id_tabla1) REFERENCES tabla1(id),
+    FOREIGN KEY (id_tabla2) REFERENCES tabla2(id)
+);
+ ```
 
 
 ### Insertar datos a la tabla
