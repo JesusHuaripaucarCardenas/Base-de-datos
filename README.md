@@ -36,6 +36,12 @@ select * from Personas
 where pais like 'venezuela';
 ```
 
+listar datos de solo nombre A
+```sql
+select * from Personas
+where nombre like 'A%';
+```
+
 actualizar registro
 ```sql
 update Personas
